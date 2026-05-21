@@ -9,21 +9,44 @@ type IconMapping = Record<SymbolViewProps["name"], ComponentProps<typeof Materia
 type IconSymbolName = keyof typeof MAPPING;
 
 /**
- * Add your SF Symbols to Material Icons mappings here.
- * - see Material Icons in the [Icons Directory](https://icons.expo.fyi).
- * - see SF Symbols in the [SF Symbols](https://developer.apple.com/sf-symbols/) app.
+ * SF Symbols → Material Icons mappings
  */
 const MAPPING = {
-  "house.fill": "home",
-  "paperplane.fill": "send",
+  // Navigation & tabs
+  "house.fill":                          "home",
+  "calendar":                            "calendar-today",
+  "calendar.badge.plus":                 "event",
+  "list.bullet":                         "format-list-bulleted",
+  "gearshape.fill":                      "settings",
+  // Event actions
+  "plus":                                "add",
+  "plus.circle.fill":                    "add-circle",
+  "pencil":                              "edit",
+  "trash":                               "delete",
+  "trash.fill":                          "delete",
+  "bell":                                "notifications-none",
+  "bell.fill":                           "notifications",
+  "bell.slash":                          "notifications-off",
+  "checkmark":                           "check",
+  "checkmark.circle.fill":              "check-circle",
+  "xmark":                               "close",
+  "xmark.circle.fill":                  "cancel",
+  // Navigation
+  "chevron.left":                        "chevron-left",
+  "chevron.right":                       "chevron-right",
   "chevron.left.forwardslash.chevron.right": "code",
-  "chevron.right": "chevron-right",
+  "paperplane.fill":                     "send",
+  // Misc
+  "clock":                               "access-time",
+  "clock.fill":                          "access-time-filled",
+  "note.text":                           "notes",
+  "info.circle":                         "info",
+  "moon.stars.fill":                     "dark-mode",
+  "sun.max.fill":                        "light-mode",
 } as IconMapping;
 
 /**
  * An icon component that uses native SF Symbols on iOS, and Material Icons on Android and web.
- * This ensures a consistent look across platforms, and optimal resource usage.
- * Icon `name`s are based on SF Symbols and require manual mapping to Material Icons.
  */
 export function IconSymbol({
   name,

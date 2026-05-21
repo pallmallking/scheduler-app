@@ -1,4 +1,7 @@
 import "@/global.css";
+import * as Notifications from "expo-notifications";
+import { EventsProvider } from "@/lib/events-context";
+import { useNotificationPermissions } from "@/hooks/use-notification-permissions";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
@@ -26,6 +29,11 @@ export const unstable_settings = {
   anchor: "(tabs)",
 };
 
+function NotificationSetup() {
+  useNotificationPermissions();
+  return null;
+}
+
 export default function RootLayout() {
   const initialInsets = initialWindowMetrics?.insets ?? DEFAULT_WEB_INSETS;
   const initialFrame = initialWindowMetrics?.frame ?? DEFAULT_WEB_FRAME;
@@ -36,6 +44,19 @@ export default function RootLayout() {
   // Initialize Manus runtime for cookie injection from parent container
   useEffect(() => {
     initManusRuntime();
+  }, []);
+
+  // Set up notification handler
+  useEffect(() => {
+    Notifications.setNotificationHandler({
+      handleNotification: async () => ({
+        shouldShowAlert: true,
+        shouldPlaySound: true,
+        shouldSetBadge: false,
+        shouldShowBanner: true,
+        shouldShowList: true,
+      }),
+    });
   }, []);
 
   const handleSafeAreaUpdate = useCallback((metrics: Metrics) => {
@@ -80,6 +101,8 @@ export default function RootLayout() {
 
   const content = (
     <GestureHandlerRootView style={{ flex: 1 }}>
+      <NotificationSetup />
+      <EventsProvider>
       <trpc.Provider client={trpcClient} queryClient={queryClient}>
         <QueryClientProvider client={queryClient}>
           {/* Default to hiding native headers so raw route segments don't appear (e.g. "(tabs)", "products/[id]"). */}
@@ -88,10 +111,14 @@ export default function RootLayout() {
           <Stack screenOptions={{ headerShown: false }}>
             <Stack.Screen name="(tabs)" />
             <Stack.Screen name="oauth/callback" />
+            <Stack.Screen name="event/new" options={{ presentation: "modal" }} />
+            <Stack.Screen name="event/[id]" />
+            <Stack.Screen name="event/edit/[id]" options={{ presentation: "modal" }} />
           </Stack>
           <StatusBar style="auto" />
         </QueryClientProvider>
       </trpc.Provider>
+      </EventsProvider>
     </GestureHandlerRootView>
   );
 

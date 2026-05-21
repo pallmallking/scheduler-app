@@ -50,6 +50,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         "color-success": SchemeColors[colorScheme].success,
         "color-warning": SchemeColors[colorScheme].warning,
         "color-error": SchemeColors[colorScheme].error,
+        "color-tint": SchemeColors[colorScheme].tint ?? SchemeColors[colorScheme].primary,
       }),
     [colorScheme],
   );
@@ -61,8 +62,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }),
     [colorScheme, setColorScheme],
   );
-  console.log(value, themeVariables)
-
   return (
     <ThemeContext.Provider value={value}>
       <View style={[{ flex: 1 }, themeVariables]}>{children}</View>
