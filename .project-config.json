@@ -1,0 +1,51 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [
+    "server",
+    "db",
+    "user"
+  ],
+  "dev_command": "pnpm run dev",
+  "env_vars": {
+    "DATABASE_URL": "mysql://3yXLZoeyMGBqfLV.1dc63a1278cc:1JLvzOW5Am00Nqmm2WB4@gateway02.us-east-1.prod.aws.tidbcloud.com:4000/3GW9AgLU5DMTBaRY7WjRLY?ssl={\"rejectUnauthorized\":true}"
+  },
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310419663028274771/3GW9AgLU5DMTBaRY7WjRLY",
+    "access_key_id": "ASIAZV3A2ECZOKYGHTSI",
+    "secret_access_key": "UXIC460QQfSsoqjxbOEZfbLCUH/vr3b1anvUpikQ",
+    "session_token": "IQoJb3JpZ2luX2VjEDIaCXVzLWVhc3QtMSJGMEQCIDRvfmd6TKFGlUo9f5MLzba1IGAlJ/AylQNZUZcwRP0MAiB8NkoCcPkj7EAGF33ORoe6yNgalfJXk+jStM6GYYv/1yr/Awj7//////////8BEAQaDDY2NTM4NjA5ODg2NiIMdsgRZPifMu5g7gJGKtMD0lUecaJWg5JDChTwc63mXTiBeCG5XR0xfuA0dbgIuR0h3ik4vciSXCuCozLCE9CEFeRnUsCWnnLJfyDSw+ZViu9BFgdoydtc9eXvGoFM7HiHrQssbkL/sji/9hmtKyoBlKDeTVCIaJmaB4FUqakbwEf40HoZK6SzYDsYMaG77vZmltdwYOSkG5dybY9mHoAanHXgfswx1xCwT0ugFGijfRuqs+pQyxcnLI/qAd7iF239pA8Xy/Szt8fhNkbwoThMVA0uh2z6yW73QZOso5z5y8pHgRejOKAS16l/oC73ODtn995/GgdtBF4Whq9pnYs87GFlW8sFV+xbgWsopy6fqgzXT4G8uBdjvXrgOgdCu3NiZ5mvGs3nAXRIZxW1EmCitKrFSImqMlxLfhUKmd5UQ9q1TA1wlaK9ZCpU327d/ykYsF/KHfp3OQa2c4EZVjkIN+7GN65nCAOI69Gq/OIvscDmVpdz+ARjum4pzZ9tLKNXT+6XhufQEKtTzBb3+IanyxcyaImoCblSolXbNvGdKJRbt1gBhz/MC1QJE804x91oKYZQ+Iop29nh3SumV2i8alsSJ6/2IuUrNrIC+sAX2tvnWczisj2Ald1z18zCMi63neUwqr+50AY6ngHyuuggPECjjxviPnXSUfyA5zfVUfzWF77UP0PLn9CZxf1PU9DqTqxlZISRm0Rh0XWRoQvKHJGLkQP1dmtD/xp3GrxHEATHLhyt3BvvJqaoIBeZcn0tnRymVSAdv4KEBT1J9gMWfPrr45GG5hmeDObfhKPwZljSOchh8fPiPU6D/vtT0pRte4AvdglTcqaHZ6TIm96eIe04Q9mbMWZY2w==",
+    "expiration": "2026-05-21T13:28:10.000Z"
+  },
+  "name": "scheduler-app",
+  "path": "/home/ubuntu/scheduler-app",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "goirSXZiPNftXCFzABSHYm",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "EXPO_APP_QR_URL": "exps://8081-ixv1za0z0dp6ss5df4a9t-c595768a.us2.manus.computer",
+    "EXPO_PACKAGER_PROXY_URL": "https://8081-ixv1za0z0dp6ss5df4a9t-c595768a.us2.manus.computer",
+    "EXPO_PUBLIC_API_BASE_URL": "https://3000-ixv1za0z0dp6ss5df4a9t-c595768a.us2.manus.computer",
+    "EXPO_PUBLIC_OAUTH_PORTAL_URL": "https://manus.im",
+    "EXPO_PUBLIC_OAUTH_SERVER_URL": "https://api.manus.im",
+    "EXPO_PUBLIC_OWNER_NAME": "Paul Tolleson",
+    "EXPO_PUBLIC_OWNER_OPEN_ID": "mSho3d7fQnH37mxF7gXFq7",
+    "JWT_SECRET": "gzJQBy4hPCLwupZhivub4L",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Paul Tolleson",
+    "OWNER_OPEN_ID": "mSho3d7fQnH37mxF7gXFq7",
+    "REACT_NATIVE_PACKAGER_HOSTNAME": "8081-ixv1za0z0dp6ss5df4a9t-c595768a.us2.manus.computer",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "59a6f313-681a-455b-a202-750d446e2d57",
+    "VITE_APP_ID": "3GW9AgLU5DMTBaRY7WjRLY",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "Smart Scheduler",
+    "VITE_FRONTEND_FORGE_API_KEY": "LKAYCjygBtndAytv2Jn8Tz",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "app",
+  "test_command": "pnpm test"
+}
