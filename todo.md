@@ -59,3 +59,13 @@
 - [x] Smooth modal transitions
 - [x] Press states on all interactive elements
 - [x] Empty states for calendar and agenda
+
+## Week View
+- [x] WeekStrip component: horizontal 7-day header with day labels and date numbers
+- [x] TimeGrid component: vertical 24-hour timeline with hour lines
+- [x] Event blocks positioned by start/end time on the time grid
+- [x] Toggle button to switch between Month and Week views on Calendar tab
+- [x] Week navigation (prev/next week arrows)
+- [x] Auto-scroll to current time on load
+- [x] Tap event block → Event Detail screen
+- [x] Tap empty time slot → New Event modal pre-filled with that date/time

@@ -10,7 +10,7 @@ export default function NewEventScreen() {
   const router = useRouter();
   const colors = useColors();
   const { addEvent } = useEvents();
-  const { date } = useLocalSearchParams<{ date?: string }>();
+  const { date, startTime, endTime } = useLocalSearchParams<{ date?: string; startTime?: string; endTime?: string }>();
 
   async function handleSave(data: Parameters<typeof addEvent>[0]) {
     await addEvent(data);
@@ -21,6 +21,8 @@ export default function NewEventScreen() {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <EventForm
         initialDate={date}
+        initialStartTime={startTime}
+        initialEndTime={endTime}
         onSave={handleSave}
         onCancel={() => router.back()}
       />

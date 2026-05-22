@@ -42,6 +42,8 @@ const REMINDER_OPTIONS: ReminderOffset[] = [
 
 interface EventFormProps {
   initialDate?: string;
+  initialStartTime?: string;
+  initialEndTime?: string;
   initialEvent?: CalendarEvent;
   onSave: (data: Omit<CalendarEvent, "id" | "notificationId">) => void;
   onCancel: () => void;
@@ -86,6 +88,8 @@ function formatDisplayTime(timeStr: string): string {
 
 export function EventForm({
   initialDate,
+  initialStartTime,
+  initialEndTime,
   initialEvent,
   onSave,
   onCancel,
@@ -112,10 +116,10 @@ export function EventForm({
   const [title, setTitle] = useState(initialEvent?.title ?? "");
   const [date, setDate] = useState(initialEvent?.date ?? defaultDate);
   const [startTime, setStartTime] = useState(
-    initialEvent?.startTime ?? defaultStartTime
+    initialEvent?.startTime ?? initialStartTime ?? defaultStartTime
   );
   const [endTime, setEndTime] = useState(
-    initialEvent?.endTime ?? defaultEndTime
+    initialEvent?.endTime ?? initialEndTime ?? defaultEndTime
   );
   const [color, setColor] = useState<EventColor>(
     initialEvent?.color ?? "indigo"
