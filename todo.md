@@ -69,3 +69,13 @@
 - [x] Auto-scroll to current time on load
 - [x] Tap event block → Event Detail screen
 - [x] Tap empty time slot → New Event modal pre-filled with that date/time
+
+## Drag-and-Drop Rescheduling (Week View)
+- [x] Long-press event block to initiate drag
+- [x] Floating ghost event block follows finger during drag
+- [x] Snap ghost to nearest 15-minute interval
+- [x] Highlight drop target column (day) and time slot during drag
+- [x] Release to reschedule: update event date + startTime + endTime
+- [x] Haptic feedback on drag start and successful drop
+- [x] Visual feedback: dim original block while dragging
+- [x] Cancel drag on release outside valid area (restore original position)
