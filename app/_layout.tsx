@@ -1,4 +1,5 @@
 import "@/global.css";
+// @ts-ignore
 import * as Notifications from "expo-notifications";
 import { EventsProvider } from "@/lib/events-context";
 import { useNotificationPermissions } from "@/hooks/use-notification-permissions";
